@@ -37,18 +37,53 @@
       border-radius: 50%;
     }
 
-    .profile-name {
+    /* Circular text effect */
+    .profile .circle-text {
       position: absolute;
-      top: 180px;
-      width: 100%;
+      top: 50%;
+      left: 50%;
+      width: 200px;
+      height: 200px;
+      margin-top: -100px;
+      margin-left: -100px;
+      border-radius: 50%;
+      transform: rotate(0deg);
+      transition: transform 0.5s ease;
+      animation: spin-text 4s linear infinite;
+      color: #fff;
+      font-size: 16px;
+      text-transform: uppercase;
       text-align: center;
-      font-size: 14px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
     }
 
-    .profile:hover .profile-name {
-      opacity: 1;
+    /* Text around circle positioning */
+    .circle-text p {
+      display: inline-block;
+      position: absolute;
+      width: 100%;
+      text-align: center;
+      transform-origin: 50% 100%;
+    }
+
+    .circle-text p:nth-child(1) { transform: rotate(0deg); }
+    .circle-text p:nth-child(2) { transform: rotate(30deg); }
+    .circle-text p:nth-child(3) { transform: rotate(60deg); }
+    .circle-text p:nth-child(4) { transform: rotate(90deg); }
+    .circle-text p:nth-child(5) { transform: rotate(120deg); }
+    .circle-text p:nth-child(6) { transform: rotate(150deg); }
+    .circle-text p:nth-child(7) { transform: rotate(180deg); }
+    .circle-text p:nth-child(8) { transform: rotate(210deg); }
+    .circle-text p:nth-child(9) { transform: rotate(240deg); }
+    .circle-text p:nth-child(10) { transform: rotate(270deg); }
+
+    .profile:hover .circle-text {
+      animation-play-state: running;
+    }
+
+    /* Keyframes for spinning text */
+    @keyframes spin-text {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
     }
 
     /* Speech bubble section */
@@ -78,6 +113,7 @@
       border-right: 20px solid transparent;
       border-top: 20px solid white;
     }
+
   </style>
 </head>
 <body>
@@ -91,17 +127,23 @@
   <div class="profile-container">
     <div class="profile" onmouseover="changeQuote('Ammaar Reshi', 'Head of Design', 'Design is not just what it looks like and feels like. Design is how it works.')">
       <img src="https://via.placeholder.com/150" alt="Ammaar Reshi">
-      <div class="profile-name">Ammaar Reshi - Head of Design</div>
+      <div class="circle-text">
+        <p>A</p><p>m</p><p>m</p><p>a</p><p>a</p><p>r</p><p>R</p><p>e</p><p>s</p><p>h</p><p>i</p><p>-</p><p>H</p><p>e</p><p>a</p><p>d</p><p>o</p><p>f</p><p>D</p><p>e</p><p>s</p><p>i</p><p>g</p><p>n</p>
+      </div>
     </div>
 
     <div class="profile" onmouseover="changeQuote('John Doe', 'Lead Developer', 'Code is like humor. When you have to explain it, it’s bad.')">
       <img src="https://via.placeholder.com/150" alt="John Doe">
-      <div class="profile-name">John Doe - Lead Developer</div>
+      <div class="circle-text">
+        <p>J</p><p>o</p><p>h</p><p>n</p><p>D</p><p>o</p><p>e</p><p>-</p><p>L</p><p>e</p><p>a</p><p>d</p><p>D</p><p>e</p><p>v</p><p>e</p><p>l</p><p>o</p><p>p</p><p>e</p><p>r</p>
+      </div>
     </div>
 
     <div class="profile" onmouseover="changeQuote('Jane Smith', 'Marketing Director', 'Marketing is no longer about the stuff that you make, but about the stories you tell.')">
       <img src="https://via.placeholder.com/150" alt="Jane Smith">
-      <div class="profile-name">Jane Smith - Marketing Director</div>
+      <div class="circle-text">
+        <p>J</p><p>a</p><p>n</p><p>e</p><p>S</p><p>m</p><p>i</p><p>t</p><p>h</p><p>-</p><p>M</p><p>a</p><p>r</p><p>k</p><p>e</p><p>t</p><p>i</p><p>n</p><p>g</p><p>D</p><p>i</p><p>r</p><p>e</p><p>c</p><p>t</p><p>o</p><p>r</p>
+      </div>
     </div>
   </div>
 
